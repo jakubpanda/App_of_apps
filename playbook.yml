@@ -1,3 +1,4 @@
+---
 - name: Deploy application
   hosts: all
   become: true
@@ -5,7 +6,7 @@
     deployment_path: "/home/ubuntu/app"
     compose_path: "./docker-compose.yml"
   roles:
-    -geerlingguy.docker
+    - geerlingguy.docker
   tasks:
     - name: Update apt-get repo and cache
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
