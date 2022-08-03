@@ -16,8 +16,8 @@ pipeline {
 
     environment {
 
-        backendDockerTag = params.backendDockerTag.isEmpty() ? "latest" : params.backendDockerTag
-        frontendDockerTag = params.frontendDockerTag.isEmpty() ? "latest" : params.frontendDockerTag
+        backendDockerTag = "params.backendDockerTag.isEmpty() ? "latest" : params.backendDockerTag"
+        frontendDockerTag = "params.frontendDockerTag.isEmpty() ? "latest" : params.frontendDockerTag"
         FRONTEND_IMAGE="$frontendImage:$frontendDockerTag"
         BACKEND_IMAGE="$backendImage:$backendDockerTag"
     }
@@ -55,7 +55,7 @@ pipeline {
             }
         }
 
-        stage {
+        stage("selenium test") {
             steps {
                 sh "pip3 install -r test/selenium/requirements.txt"
                 sh "python3 -m pytest test/selenium/frontendTest.py"
