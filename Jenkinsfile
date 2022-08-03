@@ -14,7 +14,7 @@ pipeline {
         terraform 'Terraform'
     }
 
-    environments {
+    environment {
 
         backendDockerTag = params.backendDockerTag.isEmpty() ? "latest" : params.backendDockerTag
         frontendDockerTag = params.frontendDockerTag.isEmpty() ? "latest" : params.frontendDockerTag
