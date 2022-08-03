@@ -18,8 +18,8 @@ pipeline {
 
         backendDockerTag = params.backendDockerTag.isEmpty() ? "latest" : params.backendDockerTag
         frontendDockerTag = params.frontendDockerTag.isEmpty() ? "latest" : params.frontendDockerTag
-        FRONTEND_IMAGE=$frontendImage:$frontendDockerTag
-        BACKEND_IMAGE=$backendImage:$backendDockerTag
+        FRONTEND_IMAGE="$frontendImage:$frontendDockerTag"
+        BACKEND_IMAGE="$backendImage:$backendDockerTag"
     }
 
     stages {
