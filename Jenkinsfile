@@ -16,8 +16,8 @@ pipeline {
 
     environment {
 
-        backendDockerTag = "params.backendDockerTag.isEmpty() ? "latest" : params.backendDockerTag"
-        frontendDockerTag = "params.frontendDockerTag.isEmpty() ? "latest" : params.frontendDockerTag"
+        backendDockerTag = "params.backendDockerTag.isEmpty() ? 'latest' : params.backendDockerTag"
+        frontendDockerTag = "params.frontendDockerTag.isEmpty() ? 'latest' : params.frontendDockerTag"
         FRONTEND_IMAGE="$frontendImage:$frontendDockerTag"
         BACKEND_IMAGE="$backendImage:$backendDockerTag"
     }
